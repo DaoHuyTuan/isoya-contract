@@ -9,12 +9,12 @@ contract Factory {
         owner = msg.sender;
     }
 
-    function create_account() external payable {
+    function create_account() external {
         AccountState newAccount = new AccountState(msg.sender);
         list[msg.sender] = address(newAccount);
     }
     
-    function get_account() external view returns(address) {
+    function get_account() external view returns (address) {
         return list[msg.sender];
     }
 }
