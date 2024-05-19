@@ -14,7 +14,7 @@ contract Factory {
         list[msg.sender] = address(newAccount);
     }
     
-    function get_account() external view returns (address) {
-        return list[msg.sender];
+    function get_account(address account) external view returns (address) {
+        return list[account];
     }
 }

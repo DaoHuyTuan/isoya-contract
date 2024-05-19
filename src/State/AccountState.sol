@@ -34,12 +34,12 @@ contract AccountState {
         orders[_id] = _newOrder;
     }
 
-    function get_orders() external view onlyOwner("list") returns (Order[] memory, address) {
+    function get_orders() external view onlyOwner("list") returns (Order[] memory) {
         Order[] memory _orders = new Order[](total);
         for (uint256 i = 0; i < total; i++) {
             _orders[i] = orders[i];
         }
-        return (_orders, msg.sender);
+        return _orders;
     }
 
     function get_order_by_id(uint256 _id) external view onlyOwner("get") returns (Order memory) {
